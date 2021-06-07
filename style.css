@@ -1,0 +1,112 @@
+header h1 {
+  margin: 0;
+}
+header p {
+  padding-bottom: 1rem;
+  margin: 0;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+hr {
+  border-color: hsla(0, 0%, 100%, 0.2);
+  margin-bottom: 1rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 20em;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.stats-container ul {
+  list-style: none;
+  padding: 0;
+  padding-bottom: 1rem;
+  margin: 0;
+  display: grid;
+  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.stats-container .general article {
+  padding: 1rem;
+  background-color: var(--dark-purple);
+  border-radius: 1rem;
+}
+.stats-container .general article > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.stats-container .general article p {
+  margin: 0;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.stats-container .general h1 {
+  margin: 0;
+  font-size: x-large;
+}
+.stats-container .general .icon {
+  display: grid;
+  place-items: center;
+  background-color: var(--blue-gray);
+  border-radius: 0.5rem;
+  height: 36px;
+  width: 36px;
+}
+.order {
+  padding: 1rem;
+  background-color: var(--dark-purple);
+  border-radius: 1rem;
+}
+.order h1 {
+  margin-top: 0;
+}
+.order table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.order table th {
+  text-align: left;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid var(--blue-gray);
+}
+.order table td {
+  padding: 0.5rem;
+}
+.side-stats-container {
+  padding-left: 1rem;
+}
+.most-ordered {
+  padding: 1rem;
+  background-color: var(--dark-purple);
+  border-radius: 1rem;
+}
+.most-ordered h1 {
+  margin-top: 0;
+}
+.most-ordered ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.most-ordered article {
+  display: flex;
+  gap: 1rem;
+}
+.most-ordered li {
+  padding-bottom: 0.5rem;
+}
+.most-ordered li:last-child {
+  padding-bottom: 0;
+}
+.most-ordered article p {
+  margin: 0;
+  color: hsla(0, 0%, 100%, 0.6);
+  align-self: center;
+  font-size: small;
+}
+.most-ordered article h2 {
+  margin: 0;
+  font-size: medium;
+  font-weight: normal;
+  color: white;
+}

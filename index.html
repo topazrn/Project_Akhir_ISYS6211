@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganee - Transaksi</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="stats-container">
+      <header>
+        <h1>Dashboard</h1>
+        <p class="current-date"></p>
+        <hr>
+      </header>
+      <section class="general">
+        <ul>
+          <li>
+            <article class="revenue">
+              <div>
+                <div class="icon">
+                  <img src="assets/dollar-sign-solid.svg" width="20" height="20" alt="">
+                </div>
+                <p>Total Revenue</p>
+              </div>
+              <h1>Rp 12321</h1>
+            </article>
+          </li>
+          <li>
+            <article class="ordered">
+              <div>
+                <div class="icon">
+                  <img src="assets/bookmark-regular.svg" width="20" height="20" alt="">
+                </div>
+                <p>Total Items Ordered</p>
+              </div>
+              <h1>12321</h1>
+            </article>
+          </li>
+          <li>
+            <article class="customers">
+              <div>
+                <div class="icon">
+                  <img src="assets/users-regular.svg" width="20" height="20" alt="">
+                </div>
+                <p>Total Customers</p>
+              </div>
+              <h1>12321</h1>
+            </article>
+          </li>
+        </ul>
+      </section>
+      <article class="order">
+        <h1>Order Report</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total Payment</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- template 0  -->
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <section class="side-stats-container">
+      <section class="most-ordered">
+        <h1>Most Ordered</h1>
+        <hr>
+        <ul>
+          <!-- template 1  -->
+        </ul>
+      </section>
+    </section>
+  </main>
+  <template>
+    <tr>
+      <td>Product Name</td>
+      <td>Rp 23.123</td>
+      <td>3</td>
+      <td>Rp 69.369</td>
+      <td>Monday, June 7, 2021 20:20</td>
+    </tr>
+  </template>
+  <template>
+    <li>
+      <article>
+        <img width="50" height="50" src="https://www.forisa.co.id/images/product/popice_Grape_other.png" alt="">
+        <div>
+          <h2 itemprop="name">Product Name</h2>
+          <p class="qty">
+            <data value="120">120</data> items ordered
+          </p>
+        </div>
+      </article>
+    </li>
+  </template>
+  <script src="DB.js"></script>
+  <script src="global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

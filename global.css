@@ -1,0 +1,38 @@
+:root {
+  --blue: hsl(207, 78%, 44%);
+  --blue-gray: hsl(229, 19%, 18%);
+  --dark-purple: hsl(249, 19%, 14%);
+  --red: hsl(9, 75%, 66%);
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: var(--blue-gray);
+  color: white;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  display: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

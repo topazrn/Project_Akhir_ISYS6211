@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganee - Transaksi</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="products-container">
+      <header>
+        <h1>Dashboard</h1>
+        <p class="current-date"></p>
+        <hr>
+      </header>
+      <ul></ul>
+    </section>
+    <section class="checkout">
+      <section class="products-checkout">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 50%;" align="left">Item</th>
+              <th style="width: 1%;">Qty</th>
+              <th style="width: 25%;" align="left">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+      <h1>Total: <data value="0">Rp 0</data></h1>
+      <button onclick="checkout()">Checkout</button>
+    </section>
+  </main>
+  <template>
+    <article onclick="addToCart(this)" data-id="" class="product-item">
+      <img src="" alt="Product Name">
+      <h2 itemprop="name">Product Name</h2>
+      <p class="harga"><data value="130">130</data></p>
+      <p class="stok">Stocks available: <data value="20">20</data></p>
+    </article>
+  </template>
+  <template>
+    <tr class="cart-product-item">
+      <td>
+        <article data-id="">
+          <img src="" alt="Product Name">
+          <div>
+            <h2 itemprop="name">Product Name</h2>
+            <p class="harga"><data value="130">130</data></p>
+          </div>
+        </article>
+      </td>
+      <td class="qty" align="center">
+        <input onchange="onchangeCartItemQuantity(this)" type="number" name="" id="" value="1" min="0">
+        <div class="delete" onclick="deleteCartItem(this)"><img src="../assets/trash-alt-regular.svg" width="20" height="20" alt=""></div>
+      </td>
+      <td>
+        <p class="total"><data value="130">130</data></p>
+      </td>
+    </tr>
+  </template>
+  <script src="../DB.js"></script>
+  <script src="../global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
