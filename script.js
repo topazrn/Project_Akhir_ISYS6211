@@ -44,7 +44,7 @@ function showOrderReport() {
       harga.innerText = toRupiah(order.harga);
       qty.innerText = order.qty;
       total.innerText = toRupiah(order.total);
-      date.innerText = (new Date(order.date)).toLocaleString();
+      date.innerText = (new Date(parseInt(order.date))).toLocaleString();
       ordersContainer.appendChild(cloneTemplateOrder);
     });
   }

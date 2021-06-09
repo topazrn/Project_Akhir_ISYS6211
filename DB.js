@@ -7,7 +7,7 @@ class DB {
           deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
           gambar: "https://www.forisa.co.id/images/product/popice_Durian_other.png",
           harga: 950,
-          stok: 80,
+          stok: 70,
         },
         {
           nama: "Pop Ice Rasa Mangga",
@@ -40,22 +40,42 @@ class DB {
       ],
       Restok:[
         {
-          idProduk: "seed",
-          qty: "seed",
-          modal: "seed",
-        }
+          idProduk: 1,
+          qty: 80,
+          modal: 60000,
+        },
+        {
+          idProduk: 2,
+          qty: 30,
+          modal: 20000,
+        },
+        {
+          idProduk: 3,
+          qty: 60,
+          modal: 40000,
+        },
+        {
+          idProduk: 4,
+          qty: 99,
+          modal: 80000,
+        },
+        {
+          idProduk: 5,
+          qty: 80,
+          modal: 60000,
+        },
       ],
       Transaksi:[
         {
-          date: "seed",
+          date: 1623210617791,
         }
       ],
       TransaksiDetail:[
         {
-          idTransaksi: "seed",
-          idProduk: "seed",
-          qty: "seed",
-          harga: "seed",
+          idTransaksi: 1,
+          idProduk: 1,
+          qty: 10,
+          harga: 950,
         }
       ],
     };
