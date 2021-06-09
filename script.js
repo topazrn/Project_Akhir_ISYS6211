@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   showOrderReport();
-  showMostOrdered()
+  showMostOrdered();
+  showTotalRevenue();
+  showTotalItemsOrdered();
+  showTotalCustomers();
 });
 
 function showOrderReport() {
@@ -53,7 +56,6 @@ function showMostOrdered() {
     let renderedData = [];
     for (let index = 0; index < TransaksiDetail.length; index++) {
       const order = TransaksiDetail[index];
-      console.log(order);
       db.query(`SELECT nama, gambar FROM Produk WHERE id = ${order.idProduk}`, (Produk) => {
         renderedData.push({
           nama: Produk[0].nama,
@@ -81,5 +83,41 @@ function showMostOrdered() {
       terjual.value = produk.terjual;
       produksContainer.appendChild(cloneTemplateProduk);
     });
+  }
+}
+
+function showTotalRevenue() {
+  let db = new DB();
+  db.query(`SELECT SUM(qty * harga) as TotalRevenue FROM TransaksiDetail`, (TransaksiDetail) => {
+    render(TransaksiDetail[0].TotalRevenue);
+  });
+  
+  function render(totalRevenue) {
+    let h1 = document.querySelector(".stats-container .general .revenue h1");
+    h1.innerHTML = toRupiah(totalRevenue);
+  }
+}
+
+function showTotalItemsOrdered() {
+  let db = new DB();
+  db.query(`SELECT SUM(qty) as TotalItemsOrdered FROM TransaksiDetail`, (TransaksiDetail) => {
+    render(TransaksiDetail[0].TotalItemsOrdered);
+  });
+  
+  function render(totalItemsOrdered) {
+    let h1 = document.querySelector(".stats-container .general .ordered h1");
+    h1.innerHTML = totalItemsOrdered;
+  }
+}
+
+function showTotalCustomers() {
+  let db = new DB();
+  db.query(`SELECT COUNT(*) as TotalCustomers FROM Transaksi`, (TransaksiDetail) => {
+    render(TransaksiDetail[0].TotalCustomers);
+  });
+  
+  function render(totalCustomers) {
+    let h1 = document.querySelector(".stats-container .general .customers h1");
+    h1.innerHTML = totalCustomers;
   }
 }
