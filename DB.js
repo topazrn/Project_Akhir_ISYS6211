@@ -8,7 +8,6 @@ class DB {
           gambar: "https://www.forisa.co.id/images/product/popice_Durian_other.png",
           harga: 950,
           stok: 80,
-          modal: 60000,
         },
         {
           nama: "Pop Ice Rasa Mangga",
@@ -16,7 +15,6 @@ class DB {
           gambar: "https://www.forisa.co.id/images/product/popice_Mango_other.png",
           harga: 950,
           stok: 30,
-          modal: 20000,
         },
         {
           nama: "Pop Ice Rasa Doger",
@@ -24,7 +22,6 @@ class DB {
           gambar: "https://www.forisa.co.id/images/product/popice_Doger_other.png",
           harga: 950,
           stok: 60,
-          modal: 40000,
         },
         {
           nama: "Pop Ice Rasa Anggur",
@@ -32,7 +29,6 @@ class DB {
           gambar: "https://www.forisa.co.id/images/product/popice_Grape_other.png",
           harga: 950,
           stok: 99,
-          modal: 80000,
         },
         {
           nama: "Pop Ice Rasa Taro",
@@ -40,7 +36,6 @@ class DB {
           gambar: "https://www.forisa.co.id/images/product/popice_Taro_other.png",
           harga: 950,
           stok: 80,
-          modal: 60000,
         },
       ],
       Restok:[

@@ -13,7 +13,6 @@ form input[type=text],form input[type=number] {
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   color: white;
   background-color: var(--blue-gray);
-  text-align: center;
 }
 form input[type=submit] {
   width: 100%;
