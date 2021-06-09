@@ -5,27 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganee - Tambah Produk</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <form onsubmit="submitProduk(event)" action="https://www.google.com/" method="GET">
-    <label for="nama">Nama</label>
-    <input type="text" name="nama">
-    <br>
-    <label for="deskripsi">Deskripsi</label>
-    <input type="text" name="deskripsi">
-    <br>
-    <label for="gambar">Gambar</label>
-    <input type="text" name="gambar">
-    <br>
-    <label for="harga">Harga</label>
-    <input type="number" name="harga">
-    <br>
-    <label for="stok_awal">Stok Awal</label>
-    <input type="number" name="stok_awal">
-    <br>
-    <label for="modal">Modal</label>
-    <input type="number" name="modal">
-    <br>
+    <section>
+      <label for="nama">Nama</label>
+      <input type="text" required id="nama" name="nama">
+      <label for="deskripsi">Deskripsi</label>
+      <input type="text" required id="deskripsi" name="deskripsi">
+      <label for="gambar">Gambar</label>
+      <input type="text" required id="gambar" name="gambar">
+      <label for="harga">Harga</label>
+      <input type="number" required id="harga" name="harga">
+      <label for="stok_awal">Stok Awal</label>
+      <input type="number" required id="stok_awal" name="stok_awal">
+      <label for="modal">Modal</label>
+      <input type="number" required id="modal" name="modal">
+    </section>
     <input type="submit" value="Tambah">
   </form>
   <script src="script.js"></script>

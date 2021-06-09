@@ -1,0 +1,29 @@
+form {
+  width: 500px;
+  padding: 1rem;
+}
+form section {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+}
+form input[type=text],form input[type=number] {
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  color: white;
+  background-color: var(--blue-gray);
+  text-align: center;
+}
+form input[type=submit] {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--red);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5rem -20px var(--red);
+  -webkit-box-shadow: 0 0 5rem -20px var(--red);
+  -moz-box-shadow: 0 0 5rem -20px var(--red);
+}
