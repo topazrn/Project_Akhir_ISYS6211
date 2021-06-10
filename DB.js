@@ -42,27 +42,27 @@ class DB {
         {
           idProduk: 1,
           qty: 80,
-          modal: 60000,
+          modal: 545,
         },
         {
           idProduk: 2,
           qty: 30,
-          modal: 20000,
+          modal: 545,
         },
         {
           idProduk: 3,
           qty: 60,
-          modal: 40000,
+          modal: 545,
         },
         {
           idProduk: 4,
           qty: 99,
-          modal: 80000,
+          modal: 545,
         },
         {
           idProduk: 5,
           qty: 80,
-          modal: 60000,
+          modal: 545,
         },
       ],
       Transaksi:[
