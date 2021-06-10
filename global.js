@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   renderCurrentDate();
+  new DB().isDbReady();
 });
 
 function renderCurrentDate() {
@@ -21,92 +22,15 @@ function toRupiah(_int) {
   return _int.toLocaleString('id-ID', options);
 }
 
+function getHomeUrl() {
+  return `${window.location.protocol}//${window.location.host}`;
+}
+
 function getCurrentUrlWithoutQueryString() {
-  return `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
+  return `${getHomeUrl()}${window.location.pathname}`;
 }
 
 class DB {
-  constructor(){
-    this.seedData = {
-      Produk: [
-        {
-          nama: "Pop Ice Rasa Durian",
-          deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
-          gambar: "https://www.forisa.co.id/images/product/popice_Durian_other.png",
-          harga: 950,
-          stok: 70,
-        },
-        {
-          nama: "Pop Ice Rasa Mangga",
-          deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
-          gambar: "https://www.forisa.co.id/images/product/popice_Mango_other.png",
-          harga: 950,
-          stok: 30,
-        },
-        {
-          nama: "Pop Ice Rasa Doger",
-          deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
-          gambar: "https://www.forisa.co.id/images/product/popice_Doger_other.png",
-          harga: 950,
-          stok: 60,
-        },
-        {
-          nama: "Pop Ice Rasa Anggur",
-          deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
-          gambar: "https://www.forisa.co.id/images/product/popice_Grape_other.png",
-          harga: 950,
-          stok: 99,
-        },
-        {
-          nama: "Pop Ice Rasa Taro",
-          deskripsi: "Pop Ice is a delicious milkshake beverage that comes in various flavors. Pop Ice can be served blended with ice or shaken in a shaker.",
-          gambar: "https://www.forisa.co.id/images/product/popice_Taro_other.png",
-          harga: 950,
-          stok: 80,
-        },
-      ],
-      Restok:[
-        {
-          idProduk: 1,
-          qty: 80,
-          modal: 545,
-        },
-        {
-          idProduk: 2,
-          qty: 30,
-          modal: 545,
-        },
-        {
-          idProduk: 3,
-          qty: 60,
-          modal: 545,
-        },
-        {
-          idProduk: 4,
-          qty: 99,
-          modal: 545,
-        },
-        {
-          idProduk: 5,
-          qty: 80,
-          modal: 545,
-        },
-      ],
-      Transaksi:[
-        {
-          date: 1623210617791,
-        }
-      ],
-      TransaksiDetail:[
-        {
-          idTransaksi: 1,
-          idProduk: 1,
-          qty: 10,
-          harga: 950,
-        }
-      ],
-    };
-  }
   query(query, callback = null) {
     let db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
     db.transaction((tx) => {
@@ -123,18 +47,54 @@ class DB {
       });
     });
   }
-  seed(){
+  import(data) {
     let db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
-    db.transaction((tx) => {  
-      Object.keys(this.seedData).forEach(table => {
+    db.transaction((tx) => {
+      Object.keys(data).forEach(table => {
         tx.executeSql(`DROP TABLE IF EXISTS ${table}`);
-        let columns = Object.keys(this.seedData[table][0]);
+        let columns = Object.keys(data[table][0]);
         tx.executeSql(`CREATE TABLE IF NOT EXISTS ${table} (id INTEGER PRIMARY KEY, ${columns.join(",")})`);
-        this.seedData[table].forEach(row => {
+        data[table].forEach(row => {
           let values = Object.values(row);
-          if (!values.includes("seed")) {
+          if (!values.includes("schema")) {
             tx.executeSql(`INSERT INTO ${table} (${columns.join(",")}) VALUES ('${values.join("','")}')`);
           }
+        });
+      });
+    });
+  }
+  getExampleData(callback) {
+    fetch(`${getHomeUrl()}/assets/DB-example.json`)
+      .then(response => response.json())
+      .then(data => callback(data));
+  }
+  getSchemaData(callback) {
+    fetch(`${getHomeUrl()}/assets/DB-schema.json`)
+      .then(response => response.json())
+      .then(data => callback(data));
+  }
+  getCurrentData(callback) {
+    let data = {};
+    this.query(`SELECT tbl_name from sqlite_master WHERE type = 'table'`, (tables) => {
+      for (let index = 1; index < tables.length; index++) {
+        const table = tables[index].tbl_name;
+        this.query(`SELECT * FROM ${table}`, (rows) => {
+          rows.forEach(row => {
+            delete row.id;
+          });
+          data[table] = rows;
+          if (index == tables.length - 1) callback(data);
+        });
+      }
+    });
+  }
+  isDbReady() {
+    let db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+    db.transaction((tx) => {
+      tx.executeSql("SELECT * FROM Produk", [], (tx, results) => {
+      }, (error) => {
+        this.getSchemaData((data) => {
+          this.import(data);
         });
       });
     });

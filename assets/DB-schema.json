@@ -1,0 +1,31 @@
+{
+  "Produk": [
+    {
+      "nama": "schema",
+      "deskripsi": "schema",
+      "gambar": "schema",
+      "harga": "schema",
+      "stok": "schema"
+    }
+  ],
+  "Restok":[
+    {
+      "idProduk": "schema",
+      "qty": "schema",
+      "modal": "schema"
+    }
+  ],
+  "Transaksi":[
+    {
+      "date": "schema"
+    }
+  ],
+  "TransaksiDetail":[
+    {
+      "idTransaksi": "schema",
+      "idProduk": "schema",
+      "qty": "schema",
+      "harga": "schema"
+    }
+  ]
+}
