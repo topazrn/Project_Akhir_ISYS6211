@@ -5,8 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganee - Tambah Stok</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <form onsubmit="tambahStokProduk(event)">
+    <section>
+      <label for="id">Id</label>
+      <input onchange="showDetails()" type="text" list="produk_list" required id="id" name="id">
+      <label for="nama">Nama</label>
+      <input type="text" disabled id="nama">
+      <label for="harga">Harga</label>
+      <input type="number" disabled id="harga">
+      <label for="stok">Stok</label>
+      <input type="number" disabled id="stok">
+      <label for="stok_tambahan">Stok tambahan</label>
+      <input type="number" required id="stok_tambahan" name="stok_tambahan">
+      <label for="modal">Modal per unit</label>
+      <input type="number" required id="modal" name="modal">
+    </section>
+    <datalist id="produk_list">
+
+    </datalist>
+    <input type="submit" value="Tambah">
+  </form>
+  <script src="../DB.js"></script>
+  <script src="../global.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

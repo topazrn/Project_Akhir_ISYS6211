@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function renderCurrentDate() {
-  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  let today = new Date();
   let eCurrentDate = document.querySelector("header .current-date");
-  eCurrentDate.innerHTML = today.toLocaleDateString("en-US", options);
+  if (eCurrentDate) {
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let today = new Date();
+    eCurrentDate.innerHTML = today.toLocaleDateString("en-US", options);
+  }
 }
 
 function toRupiah(_int) {
@@ -17,4 +19,8 @@ function toRupiah(_int) {
     maximumFractionDigits: 0,
   };
   return _int.toLocaleString('id-ID', options);
+}
+
+function getCurrentUrlWithoutQueryString() {
+  return `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
 }

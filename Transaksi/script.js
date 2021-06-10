@@ -116,7 +116,7 @@ function checkout() {
           db.query(`UPDATE Produk SET stok = stok - ${items.qty[index]} WHERE id = ${items.id[index]}`, (success) => {
             if (index == (items.id.length - 1)) {
               alert("Order has been checked out successfully.");
-              window.location.href = window.location.href;
+              window.location.href = getCurrentUrlWithoutQueryString();
             }
           });
         });
