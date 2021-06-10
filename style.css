@@ -1,20 +1,7 @@
-header h1 {
-  margin: 0;
-}
-header p {
-  padding-bottom: 1rem;
-  margin: 0;
-  color: hsla(0, 0%, 100%, 0.6);
-}
-hr {
-  border-color: hsla(0, 0%, 100%, 0.2);
-  margin-bottom: 1rem;
-}
 main {
   display: grid;
   grid-template-columns: 1fr 20em;
   height: 100%;
-  padding: 1rem;
   overflow-y: auto;
 }
 .stats-container ul {

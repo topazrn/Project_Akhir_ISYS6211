@@ -9,24 +9,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form onsubmit="submitProduk(event)">
-    <section>
-      <label for="nama">Nama</label>
-      <input type="text" required id="nama" name="nama">
-      <label for="deskripsi">Deskripsi</label>
-      <input type="text" required id="deskripsi" name="deskripsi">
-      <label for="gambar">Gambar</label>
-      <input type="text" required id="gambar" name="gambar">
-      <label for="harga">Harga per unit</label>
-      <input type="number" required id="harga" name="harga">
-      <label for="stok_awal">Stok Awal</label>
-      <input type="number" required id="stok_awal" name="stok_awal">
-      <label for="modal">Modal per unit</label>
-      <input type="number" required id="modal" name="modal">
-    </section>
-    <input type="submit" value="Tambah">
-  </form>
+  <main>
+    <header>
+      <h1>Tambah Produk</h1>
+      <p class="current-date"></p>
+      <hr>
+    </header>
+    <form onsubmit="submitProduk(event)">
+      <section>
+        <label for="nama">Nama</label>
+        <input type="text" required id="nama" name="nama">
+        <label for="deskripsi">Deskripsi</label>
+        <input type="text" required id="deskripsi" name="deskripsi">
+        <label for="gambar">Gambar</label>
+        <input type="text" required id="gambar" name="gambar">
+        <label for="harga">Harga per unit</label>
+        <input type="number" required id="harga" name="harga">
+        <label for="stok_awal">Stok Awal</label>
+        <input type="number" required id="stok_awal" name="stok_awal">
+        <label for="modal">Modal per unit</label>
+        <input type="number" required id="modal" name="modal">
+      </section>
+      <input type="submit" value="Tambah">
+    </form>
+  </main>
   <script src="../DB.js"></script>
+  <script src="../global.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
