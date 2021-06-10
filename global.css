@@ -5,6 +5,34 @@
   --red: hsl(9, 75%, 66%);
 }
 
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--dark-purple);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li.active img {
+  filter: brightness(0) invert(1);
+}
+
+nav ul li a {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+}
+
+nav ul li.active a {
+  background-color: var(--red);
+}
+
 header h1 {
   margin: 0;
 }
@@ -27,7 +55,7 @@ body {
   background-color: var(--blue-gray);
   color: white;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 main {

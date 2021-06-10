@@ -5,18 +5,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganee - Home</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <ul>
-    <li><a href="Transaksi/index.html">Transaksi</a></li>
-    <li><a href="TambahProduk/index.html">Tambah Produk</a></li>
-    <li><a href="TambahStok/index.html">Tambah Stok</a></li>
-    <li><a href="Laporan/index.html">Laporan</a></li>
-  </ul>
-  <button onclick="seedDB()">Seed database</button>
-  <button onclick="exportDB()">Export database</button>
-  <button onclick="importDB()">Import database</button>
+  <nav>
+    <ul>
+      <li class="">
+        <a href="../index.html" title="Dashboard">
+          <img height="40" width="40" src="../assets/tachometer-alt.svg" alt="">
+        </a>
+      </li>
+      <li class="">
+        <a href="../Transaksi/index.html" title="Transaksi">
+          <img height="40" width="40" src="../assets/file-invoice.svg" alt="">
+        </a>
+      </li>
+      <li class="">
+        <a href="../TambahProduk/index.html" title="Tambah Produk">
+          <img height="40" width="40" src="../assets/plus-square-regular.svg" alt="">
+        </a>
+      </li>
+      <li class="">
+        <a href="../TambahStok/index.html" title="Tambah Stok">
+          <img height="40" width="40" src="../assets/cart-plus-regular.svg" alt="">
+        </a>
+      </li>
+      <li class="active">
+        <a href="../Settings/index.html" title="Settings">
+          <img height="40" width="40" src="../assets/cogs-regular.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <ul>
+      <li><a href="Transaksi/index.html">Transaksi</a></li>
+      <li><a href="TambahProduk/index.html">Tambah Produk</a></li>
+      <li><a href="TambahStok/index.html">Tambah Stok</a></li>
+      <li><a href="Laporan/index.html">Laporan</a></li>
+    </ul>
+    <button onclick="seedDB()">Seed database</button>
+    <button onclick="exportDB()">Export database</button>
+    <button onclick="importDB()">Import database</button>
+  </main>
   <script src="../DB.js"></script>
+  <script src="../global.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

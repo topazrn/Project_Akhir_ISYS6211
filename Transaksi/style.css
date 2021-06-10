@@ -13,8 +13,8 @@ hr {
 main {
   display: grid;
   grid-template-columns: 1fr 30rem;
-  height: 100%;
   padding: 0;
+  height: calc(100% - 70px);
 }
 .products-container ul {
   list-style: none;

@@ -1,7 +1,6 @@
 main {
   display: grid;
   grid-template-columns: 1fr 20em;
-  height: 100%;
   overflow-y: auto;
 }
 .stats-container ul {
@@ -96,4 +95,12 @@ main {
   font-size: medium;
   font-weight: normal;
   color: white;
+}
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 100%;
+  }
+  .side-stats-container {
+    padding-left: 0;
+  }
 }
