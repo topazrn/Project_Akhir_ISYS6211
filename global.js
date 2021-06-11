@@ -17,6 +17,7 @@ function toRupiah(_int) {
   let options = {
     style: 'currency',
     currency: 'IDR',
+    minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   };
   return _int.toLocaleString('id-ID', options);
