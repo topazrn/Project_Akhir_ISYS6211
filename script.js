@@ -68,7 +68,7 @@ function showMostOrdered() {
       })
     }
   });
-  
+
   function render(produks) {
     let produksContainer = document.querySelector("section.most-ordered ul");
     let templateProduk = document.querySelectorAll("template")[1].content.querySelector("li");
@@ -91,8 +91,9 @@ function showTotalRevenue() {
   db.query(`SELECT SUM(qty * harga) as TotalRevenue FROM TransaksiDetail`, (TransaksiDetail) => {
     render(TransaksiDetail[0].TotalRevenue);
   });
-  
+
   function render(totalRevenue) {
+    if (totalRevenue == null) totalRevenue = 0;
     let h1 = document.querySelector(".stats-container .general .revenue h1");
     h1.innerHTML = toRupiah(totalRevenue);
   }
@@ -103,8 +104,9 @@ function showTotalItemsOrdered() {
   db.query(`SELECT SUM(qty) as TotalItemsOrdered FROM TransaksiDetail`, (TransaksiDetail) => {
     render(TransaksiDetail[0].TotalItemsOrdered);
   });
-  
+
   function render(totalItemsOrdered) {
+    if (totalItemsOrdered == null) totalItemsOrdered = 0;
     let h1 = document.querySelector(".stats-container .general .ordered h1");
     h1.innerHTML = totalItemsOrdered;
   }
@@ -115,7 +117,7 @@ function showTotalCustomers() {
   db.query(`SELECT COUNT(*) as TotalCustomers FROM Transaksi`, (TransaksiDetail) => {
     render(TransaksiDetail[0].TotalCustomers);
   });
-  
+
   function render(totalCustomers) {
     let h1 = document.querySelector(".stats-container .general .customers h1");
     h1.innerHTML = totalCustomers;
