@@ -43,6 +43,7 @@ function renderProducts(products) {
     cloneTemplateProduct.setAttribute("data-id", product.id)
     nama.innerText = product.nama;
     gambar.src = product.gambar;
+    gambar.alt = `Picture of ${product.nama}.`;
     harga.innerText = toRupiah(product.harga);
     harga.value = product.harga;
     stok.innerText = product.stok;
@@ -69,6 +70,7 @@ function renderCart(products) {
     nama.innerText = product.nama;
     nama.title = product.nama;
     gambar.src = product.gambar;
+    gambar.alt = `Picture of ${product.nama}.`;
     harga.innerText = toRupiah(product.harga);
     harga.value = product.harga;
     total.innerText = toRupiah(product.harga);
